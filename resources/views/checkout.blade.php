@@ -369,7 +369,7 @@
                 </div>
 
                 <form method="POST" action="{{ url("/mercadopago-fake/checkout/$preferenceId/approve") }}">
-                    <button type="submit" class="btn-pay" dusk="fake-mp-pay">Pagar</button>
+                    <button type="submit" class="btn-pay" dusk="fake-pay">Pagar</button>
                 </form>
 
                 <div class="secure-badge">
@@ -378,10 +378,10 @@
                 </div>
 
                 <form method="POST" action="{{ url("/mercadopago-fake/checkout/$preferenceId/decline") }}">
-                    <button type="submit" class="btn-decline" dusk="fake-mp-decline">Rechazar pago</button>
+                    <button type="submit" class="btn-decline" dusk="fake-decline">Rechazar pago</button>
                 </form>
 
-                <a href="{{ url("/mercadopago-fake/checkout/$preferenceId/cancel") }}" class="cancel-link" dusk="fake-mp-cancel">
+                <a href="{{ url("/mercadopago-fake/checkout/$preferenceId/cancel") }}" class="cancel-link" dusk="fake-cancel">
                     Cancelar y volver
                 </a>
 
@@ -398,6 +398,6 @@
         Procesado por Mercado Pago
     </div>
 
-    <div class="fake-banner">Fake MercadoPago Checkout (testing)</div>
+    <div class="fake-banner">Fake Checkout (testing)</div>
 </body>
 </html>
