@@ -60,20 +60,45 @@ class FakeCheckoutController extends Controller
         $notificationUrl = $preference['notification_url'] ?? null;
 
         $paymentId = (string) random_int(1000000000, 9999999999);
+        $merchantOrderId = (string) random_int(1000000000, 9999999999);
+        $externalReference = $preference['external_reference'] ?? '';
+        $item = $preference['items'][0] ?? [];
+
+        $merchantOrder = [
+            'id' => $merchantOrderId,
+            'status' => 'closed',
+            'order_status' => $status,
+            'external_reference' => $externalReference,
+            'preference_id' => $preferenceId,
+            'total_amount' => $item['unit_price'] ?? 0,
+            'paid_amount' => $status === 'approved' ? ($item['unit_price'] ?? 0) : 0,
+            'refunded_amount' => 0,
+            'items' => $preference['items'] ?? [],
+            'payer' => $preference['payer'] ?? [],
+            'payments' => [
+                [
+                    'id' => $paymentId,
+                    'transaction_amount' => $item['unit_price'] ?? 0,
+                    'total_paid_amount' => $status === 'approved' ? ($item['unit_price'] ?? 0) : 0,
+                    'status' => $status,
+                    'status_detail' => $status === 'approved' ? 'accredited' : 'cc_rejected_other_reason',
+                    'date_approved' => $status === 'approved' ? now()->toIso8601String() : null,
+                    'date_created' => now()->toIso8601String(),
+                ],
+            ],
+            'date_created' => now()->toIso8601String(),
+        ];
+
+        MercadoPagoFake::storeMerchantOrder($merchantOrderId, $merchantOrder);
 
         if ($notificationUrl) {
-            Http::post($notificationUrl, [
-                'action' => 'payment.created',
-                'api_version' => 'v1',
-                'data' => [
-                    'id' => $paymentId,
-                ],
-                'date_created' => now()->toIso8601String(),
-                'id' => random_int(10000000000, 99999999999),
-                'live_mode' => false,
-                'type' => 'payment',
-                'user_id' => 'FAKE_USER_ID',
-            ]);
+            $ipnUrl = Uri::of($notificationUrl)
+                ->withQuery([
+                    'topic' => 'merchant_order',
+                    'id' => $merchantOrderId,
+                ]);
+
+            Http::post((string) $ipnUrl);
         }
 
         $backUrl = $status === 'approved'
@@ -87,9 +112,9 @@ class FakeCheckoutController extends Controller
                 'payment_id' => $paymentId,
                 'status' => $status,
                 'preference_id' => $preferenceId,
-                'external_reference' => $preference['external_reference'] ?? '',
+                'external_reference' => $externalReference,
                 'payment_type' => 'credit_card',
-                'merchant_order_id' => (string) random_int(1000000000, 9999999999),
+                'merchant_order_id' => $merchantOrderId,
             ]);
 
         return redirect($redirectUrl);
