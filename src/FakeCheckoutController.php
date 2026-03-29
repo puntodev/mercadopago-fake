@@ -4,8 +4,8 @@ namespace Puntodev\MercadoPagoFake;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Routing\Controller;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Uri;
 
 class FakeCheckoutController extends Controller
@@ -98,7 +98,7 @@ class FakeCheckoutController extends Controller
                     'id' => $merchantOrderId,
                 ]);
 
-            Http::post((string) $ipnUrl);
+            app()->handle(HttpRequest::create((string) $ipnUrl, 'POST'));
         }
 
         $backUrl = $status === 'approved'
