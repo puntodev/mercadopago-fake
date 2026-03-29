@@ -1,0 +1,53 @@
+{
+    "name": "puntodev/mercadopago-fake",
+    "description": "Fake MercadoPago API Client for testing",
+    "keywords": [
+        "puntodev",
+        "mercadopago",
+        "fake",
+        "testing"
+    ],
+    "homepage": "https://github.com/puntodev/mercadopago-fake",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mariano Goldman",
+            "email": "mariano.goldman@puntodev.com.ar",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.4 <9.0",
+        "illuminate/support": "^12.53 || ^13.0",
+        "puntodev/mercadopago": "v6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^10.11",
+        "phpunit/phpunit": "^12.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Puntodev\\MercadoPagoFake\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Puntodev\\MercadoPagoFake\\MercadoPagoFakeServiceProvider"
+            ]
+        }
+    }
+}
