@@ -14,7 +14,7 @@ class MercadoPagoFakeApiTest extends TestCase
     {
         $client = app(MercadoPago::class)->defaultClient();
 
-        $order = (new PaymentPreferenceBuilder())
+        $order = (new PaymentPreferenceBuilder)
             ->item()
             ->title('Test Product')
             ->unitPrice(23.20)

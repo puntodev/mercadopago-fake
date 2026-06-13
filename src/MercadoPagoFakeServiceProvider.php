@@ -15,7 +15,7 @@ class MercadoPagoFakeServiceProvider extends ServiceProvider
 
         if (config('mercadopago-fake.enabled')) {
             $this->app->singleton(MercadoPago::class, function () {
-                return new MercadoPagoFake();
+                return new MercadoPagoFake;
             });
             $this->app->alias(MercadoPago::class, 'mercadopago');
         }
