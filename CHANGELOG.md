@@ -9,10 +9,24 @@ Released entries below are maintained automatically from the GitHub release note
 (see `.github/workflows/update-changelog.yml`); the `Unreleased` section tracks the
 range of changes on `main` that have not been released yet.
 
-## [Unreleased](https://github.com/puntodev/mercadopago-fake/compare/0.0.3...HEAD)
+## [Unreleased](https://github.com/puntodev/mercadopago-fake/compare/1.0.0...HEAD)
 
 - Require Laravel 13+ and bump `puntodev/mercadopago` to `^7.0` (#3).
 - Set up Laravel Pint, `AGENTS.md`, `CONTRIBUTING.md` and developer docs (#2).
+
+## [1.0.0](https://github.com/puntodev/mercadopago-fake/compare/0.0.3...1.0.0) - 2026-06-13
+
+<!-- Release notes generated using configuration in .github/release.yml at main -->
+### What's Changed
+
+#### Other Changes
+
+* Set up Laravel Pint + docs (AGENTS.md, README) by @marianogoldman in https://github.com/puntodev/mercadopago-fake/pull/2
+* chore: require Laravel 13+ and update dev dependencies by @marianogoldman in https://github.com/puntodev/mercadopago-fake/pull/3
+* docs: reflect Laravel 13+ requirement by @marianogoldman in https://github.com/puntodev/mercadopago-fake/pull/4
+* Automate the release process by @marianogoldman in https://github.com/puntodev/mercadopago-fake/pull/5
+
+**Full Changelog**: https://github.com/puntodev/mercadopago-fake/compare/0.0.3...1.0.0
 
 ## [0.0.3](https://github.com/puntodev/mercadopago-fake/compare/0.0.2...0.0.3) - 2026-03-29
 
