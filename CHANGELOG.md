@@ -11,9 +11,6 @@ range of changes on `main` that have not been released yet.
 
 ## [Unreleased](https://github.com/puntodev/mercadopago-fake/compare/1.0.0...HEAD)
 
-- Require Laravel 13+ and bump `puntodev/mercadopago` to `^7.0` (#3).
-- Set up Laravel Pint, `AGENTS.md`, `CONTRIBUTING.md` and developer docs (#2).
-
 ## [1.0.0](https://github.com/puntodev/mercadopago-fake/compare/0.0.3...1.0.0) - 2026-06-13
 
 <!-- Release notes generated using configuration in .github/release.yml at main -->
