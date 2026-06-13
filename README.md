@@ -145,5 +145,5 @@ for the full contribution guide.
 ## Requirements
 
 - PHP >= 8.4
-- Laravel 12+
-- `puntodev/mercadopago` ^v6.0
+- Laravel 13+
+- `puntodev/mercadopago` ^7.0
