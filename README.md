@@ -147,3 +147,12 @@ for the full contribution guide.
 - PHP >= 8.4
 - Laravel 13+
 - `puntodev/mercadopago` ^7.0
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for the list of changes per version.
+
+Releases are cut from GitHub's **"Generate release notes"** button (grouping configured
+in `.github/release.yml`). When a release is published, the
+[`update-changelog`](.github/workflows/update-changelog.yml) workflow writes its notes
+into `CHANGELOG.md` and commits them back to `main`.
