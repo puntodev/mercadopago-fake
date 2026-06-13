@@ -13,12 +13,12 @@ class MercadoPagoFake implements MercadoPago
 
     public function defaultClient(): MercadoPagoApi
     {
-        return new MercadoPagoFakeApi();
+        return new MercadoPagoFakeApi;
     }
 
     public function withCredentials(string $clientId, string $clientSecret): MercadoPagoApi
     {
-        return new MercadoPagoFakeApi();
+        return new MercadoPagoFakeApi;
     }
 
     public function usingSandbox(): bool
@@ -77,7 +77,7 @@ class MercadoPagoFake implements MercadoPago
             return static::$calls;
         }
 
-        return array_values(array_filter(static::$calls, fn(array $call) => $call['method'] === $method));
+        return array_values(array_filter(static::$calls, fn (array $call) => $call['method'] === $method));
     }
 
     public static function reset(): void

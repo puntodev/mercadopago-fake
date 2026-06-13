@@ -125,6 +125,23 @@ Start your Laravel app with `MERCADOPAGO_USE_FAKE=true` and navigate to the `ini
 | `MercadoPagoFake::getCalls($method)`                 | Get recorded calls, optionally filtered by method |
 | `MercadoPagoFake::reset()`                           | Clear all stored state and recorded calls         |
 
+## Development
+
+Code style is enforced with [Laravel Pint](https://laravel.com/docs/pint) (`laravel`
+preset, see `pint.json`). The test suite is fully isolated — it never reaches the network,
+so no MercadoPago credentials are required.
+
+```bash
+composer install
+composer test            # run the test suite (vendor/bin/phpunit)
+composer test-coverage   # generate an HTML coverage report under ./coverage
+composer lint            # check code style (vendor/bin/pint --test) — this is what CI runs
+composer format          # fix code style (vendor/bin/pint)
+```
+
+Please run `composer format` before opening a pull request. See [CONTRIBUTING.md](CONTRIBUTING.md)
+for the full contribution guide.
+
 ## Requirements
 
 - PHP >= 8.4
