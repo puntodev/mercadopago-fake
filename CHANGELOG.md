@@ -9,10 +9,21 @@ Released entries below are maintained automatically from the GitHub release note
 (see `.github/workflows/update-changelog.yml`); the `Unreleased` section tracks the
 range of changes on `main` that have not been released yet.
 
-## [Unreleased](https://github.com/puntodev/mercadopago-fake/compare/1.0.0...HEAD)
+## [Unreleased](https://github.com/puntodev/mercadopago-fake/compare/1.0.1...HEAD)
 
 - Require Laravel 13+ and bump `puntodev/mercadopago` to `^7.0` (#3).
 - Set up Laravel Pint, `AGENTS.md`, `CONTRIBUTING.md` and developer docs (#2).
+
+## [1.0.1](https://github.com/puntodev/mercadopago-fake/compare/1.0.0...1.0.1) - 2026-06-28
+
+<!-- Release notes generated using configuration in .github/release.yml at main -->
+### What's Changed
+
+#### Other Changes
+
+* fix(deps): resolve guzzle/psr7 security advisories and update dependencies by @marianogoldman in https://github.com/puntodev/mercadopago-fake/pull/7
+
+**Full Changelog**: https://github.com/puntodev/mercadopago-fake/compare/1.0.0...1.0.1
 
 ## [1.0.0](https://github.com/puntodev/mercadopago-fake/compare/0.0.3...1.0.0) - 2026-06-13
 
