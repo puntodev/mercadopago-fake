@@ -20,7 +20,7 @@
     "require": {
         "php": "^8.5",
         "illuminate/support": "^13.0",
-        "puntodev/mercadopago": "^7.0"
+        "puntodev/mercadopago": "^8.0"
     },
     "require-dev": {
         "laravel/pint": "^1.29",
