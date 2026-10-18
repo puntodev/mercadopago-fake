@@ -9,7 +9,26 @@ Released entries below are maintained automatically from the GitHub release note
 (see `.github/workflows/update-changelog.yml`); the `Unreleased` section tracks the
 range of changes on `main` that have not been released yet.
 
-## [Unreleased](https://github.com/puntodev/mercadopago-fake/compare/1.0.2...HEAD)
+## [Unreleased](https://github.com/puntodev/mercadopago-fake/compare/2.0.0...HEAD)
+
+## [2.0.0](https://github.com/puntodev/mercadopago-fake/compare/1.0.2...2.0.0) - 2026-10-18
+
+### ⚠️ Breaking change
+
+Requires PHP 8.5 or later and `puntodev/mercadopago` ^8.0. Projects on PHP 8.4 stay on the previous major version.
+
+<!-- Release notes generated using configuration in .github/release.yml at main -->
+### What's Changed
+
+#### 🧰 Maintenance & Dependencies
+
+* chore: label PRs by title prefix for release notes by @marianogoldman in https://github.com/puntodev/mercadopago-fake/pull/10
+* chore(deps): un solo PR semanal de Dependabot sin majors by @marianogoldman in https://github.com/puntodev/mercadopago-fake/pull/11
+* chore(deps): Bump the "weekly" group with 1 update across multiple ecosystems by @dependabot[bot] in https://github.com/puntodev/mercadopago-fake/pull/12
+* chore: require PHP 8.5 by @marianogoldman in https://github.com/puntodev/mercadopago-fake/pull/13
+* chore: require puntodev/mercadopago ^8.0 by @marianogoldman in https://github.com/puntodev/mercadopago-fake/pull/14
+
+**Full Changelog**: https://github.com/puntodev/mercadopago-fake/compare/1.0.2...2.0.0
 
 ## [1.0.2](https://github.com/puntodev/mercadopago-fake/compare/1.0.1...1.0.2) - 2026-10-11
 
