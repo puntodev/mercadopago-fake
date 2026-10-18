@@ -12,7 +12,7 @@ MercadoPago API**. It is not an application: it is published to Packagist and pu
 as a `--dev` dependency from Laravel apps and test suites.
 
 - **Namespace:** `Puntodev\MercadoPagoFake\` (PSR-4, mapped to `src/`)
-- **PHP:** `>=8.4 <9.0`
+- **PHP:** `^8.5`
 - **Main dependencies:** `illuminate/support` (`^13.0`, Laravel 13+) and
   `puntodev/mercadopago` (`^7.0`) — the package this one fakes.
 - **License:** MIT
@@ -70,7 +70,7 @@ composer format          # vendor/bin/pint (fix style)
 - `phpunit.xml.dist` forces `SANDBOX_GATEWAYS=true` and `MERCADOPAGO_USE_FAKE=true`.
 - ✅ Unlike `puntodev/mercadopago`, these tests are **fully isolated** — they never reach
   the network, so no credentials are needed in CI.
-- CI: `.github/workflows/php.yml` runs on PHP 8.4 on every push/PR to `main`, including a
+- CI: `.github/workflows/php.yml` runs on PHP 8.5 on every push/PR to `main`, including a
   Pint code-style check.
 
 ## Conventions
